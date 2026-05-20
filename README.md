@@ -47,7 +47,12 @@ Furthermore, statistical extraction frequently introduces **keyword redundancy**
  │  Scrollable UI Viewport  │  ◄── Custom CSS container with instant .CSV export
  └──────────────────────────┘
 
- ## Key Features
+
+
+
+
+
+## Key Features
 
 * **Asynchronous Multi-File Ingestion:** Seamlessly accepts and batch-processes multiple PDF documents simultaneously, creating a single unified textual corpus for holistic keyword extraction.
 * **In-Memory Transformer Caching:** Utilizes Streamlit's `@st.cache_resource` decorator to store the foundational deep learning model weights in memory. This eliminates heavy initialization overhead and ensures instantaneous execution on subsequent runs.
