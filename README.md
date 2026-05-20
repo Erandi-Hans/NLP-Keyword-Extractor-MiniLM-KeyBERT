@@ -12,11 +12,9 @@ Furthermore, statistical extraction frequently introduces **keyword redundancy**
 * **Information Diversification:** Implement **Maximal Marginal Relevance (MMR)** algorithms to intentionally penalize redundancy, guaranteeing a diverse and conceptually broad keyword output spectrum.
 * **Eliminate Hardware Bottlenecks:** Optimize memory allocation and execution times during deep learning inference through local caching decorators (`@st.cache_resource`).
 
-## 🏗️ System Architecture & Workflow
-
-The architecture of this high-precision extractor is designed to handle document ingestion, text unification, cached transformer inference, and dynamic reranking in a seamless, memory-efficient pipeline.
-
-┌──────────────────────────┐
+## System Architecture & Workflow
+```text
+ ┌──────────────────────────┐
  │  Multiple PDF Ingestion  │  ◄── User drops files into Streamlit UI
  └─────────────┬────────────┘
                │
@@ -48,7 +46,6 @@ The architecture of this high-precision extractor is designed to handle document
  ┌──────────────────────────┐
  │  Scrollable UI Viewport  │  ◄── Custom CSS container with instant .CSV export
  └──────────────────────────┘
-
 
  ## Key Features
 
