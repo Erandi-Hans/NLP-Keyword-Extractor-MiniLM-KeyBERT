@@ -54,24 +54,25 @@ Furthermore, statistical extraction frequently introduces **keyword redundancy**
 
 ## Key Features
 
-* **Asynchronous Multi-File Ingestion:** Seamlessly accepts and batch-processes multiple PDF documents simultaneously, creating a single unified textual corpus for holistic keyword extraction.
-* **In-Memory Transformer Caching:** Utilizes Streamlit's `@st.cache_resource` decorator to store the foundational deep learning model weights in memory. This eliminates heavy initialization overhead and ensures instantaneous execution on subsequent runs.
-* **Maximal Marginal Relevance (MMR) Pipeline:** Features advanced diversification controls (`diversity=0.6`) to penalize and filter out semantic redundancies, replacing repetitive keywords with a broad spectrum of unique concepts.
-* **Optimized Scrollable Viewport:** Features a custom CSS-styled layout with a fixed-height table container. This keeps the user interface compact and professional, even when rendering hundreds of keyword rows.
-* **Precision Floating-Point Formatting:** Automatically formats AI relevance scores to four decimal places (`{:.4f}`) to give researchers and developers accurate data for quantitative evaluation.
-* **Production-Ready Data Export:** Includes an instant one-click CSV download feature that encodes data into standardized UTF-8 format, making it immediately compatible with Excel, Google Sheets, or secondary data pipelines.
-* **Fail-Safe Exception Handling:** Built with robust `try-except` blocks around the file-reading layers, ensuring the application remains active and displays clean user-facing alerts even if a corrupted or image-only PDF is uploaded.
+* **Asynchronous Multi-File Ingestion:** Seamlessly accepts and batch-processes multiple PDF documents simultaneously.
+* **In-Memory Transformer Caching:** Utilizes Streamlit's `@st.cache_resource` decorator to store the model weights.
+* **Maximal Marginal Relevance (MMR) Pipeline:** Features advanced diversification controls (`diversity=0.6`).
+* **Optimized Scrollable Viewport:** Features a custom CSS-styled layout with a fixed-height table container.
+* **Precision Floating-Point Formatting:** Automatically formats AI relevance scores to four decimal places.
+* **Production-Ready Data Export:** Includes an instant one-click CSV download feature that encodes data cleanly.
+* **Fail-Safe Exception Handling:** Built with robust `try-except` blocks around the file-reading layers.
 
-  ##  Tech Stack & Dependencies
+---
 
-This research pipeline is engineered using robust, open-source Python libraries optimized for natural language processing and lightweight deployment:
+## Tech Stack & Dependencies
 
-*   **Core Language:** `Python 3.10+`
-*   **User Interface Framework:** `Streamlit` (For rapid, interactive UI rendering and responsive layout management).
-*   **Semantic AI Engine:** `KeyBERT` (Leveraging the `all-MiniLM-L6-v2` Sentence-Transformer model for high-dimensional vector embeddings).
-*   **Data Parsing Toolkit:** `pdfplumber` (Chosen for its extreme precision in character tracking and text extraction compared to traditional PDF readers).
-*   **Data Structure Management:** `Pandas` (For managing array matrices and converting keyword vectors into exportable tabular structures).
+This research pipeline is engineered using robust, open-source Python libraries optimized for natural language processing.
 
+* **Core Language:** `Python 3.10+`
+* **User Interface Framework:** `Streamlit` (For rapid, interactive UI rendering and responsive layout)
+* **Semantic AI Engine:** `KeyBERT` (Leveraging the `all-MiniLM-L6-v2` Sentence-Transformer model for embeddings)
+* **Data Parsing Toolkit:** `pdfplumber` (Chosen for its extreme precision in character tracking and text extraction)
+* **Data Structure Management:** `Pandas` (For managing array matrices and converting keyword vectors)
 ---
 
 ## Installation & Local Setup
