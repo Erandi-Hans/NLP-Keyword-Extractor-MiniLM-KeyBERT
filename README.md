@@ -79,59 +79,69 @@ This research pipeline is engineered using robust, open-source Python libraries 
 
 Follow these structured steps to replicate this environment and run the keyword extraction pipeline on your local workstation:
 
-### 1. Clone the Repository
-Begin by cloning this architecture to your local directory and shifting into the project path:
-```bash
-git clone [https://github.com/yourusername/KeyBERT-HighPrecision-Extractor.git](https://github.com/yourusername/KeyBERT-HighPrecision-Extractor.git)
-cd KeyBERT-HighPrecision-Extractor
+**1. Clone the Repository**
 
-### 2. Set Up a Virtual Environment (Recommended)
+Begin by cloning this architecture to your local directory and shifting into the project path:
+
+```python
+git clone [https://github.com/Erandi-Hans/NLP-Keyword-Extractor-MiniLM-KeyBERT.git](https://github.com/Erandi-Hans/NLP-Keyword-Extractor-MiniLM-KeyBERT.git)
+cd NLP-Keyword-Extractor-MiniLM-KeyBERT
+```
+**2. Set Up a Virtual Environment (Recommended)**
+
 To keep your global system dependencies clean and isolated, initialize a Python virtual environment:
 
+For Windows
 
-### For Windows
+```python
 python -m venv venv
 venv\Scripts\activate
+```
+For macOS/Linux
 
-### For macOS/Linux
+```python
 python3 -m venv venv
 source venv/bin/activate
-3. Install Required Dependencies
+```
+
+**3. Install Required Dependencies**
+
 Install the specific versions of the analytical and machine learning tools required by the pipeline:
 
+```python
 pip install streamlit pdfplumber pandas keybert sentence-transformers
-### 4. Execute the Application Server
+```
+
+**4. Execute the Application Server**
+
 Launch the local Streamlit development server to compile the scripts and launch the web interface in your browser:
 
+```python
 streamlit run app.py
+```
+
 Once executed, the terminal will provide a local URL network gateway (usually http://localhost:8501).
 
-##  Algorithmic Tuning Parameters
-
+## Algorithmic Tuning Parameters
 The analytical precision of this pipeline relies heavily on the structural parameters passed into the KeyBERT core model. Below is the technical breakdown of the configuration used for this research:
 
-*   **`keyphrase_ngram_range=(1, 2)`**: Instructs the model to extract both single-word terms (Unigrams) and dual-word combinations (Bigrams), capturing complex concepts like *"Data Science"* or *"Machine Learning"*.
-*   **`stop_words='english'`**: Automatically filters out semantic filler elements (*"the"*, *"is"*, *"and"*) to safeguard vector memory spaces for critical technical terminologies.
-*   **`use_mmr=True`**: Activates **Maximal Marginal Relevance**, a text re-ranking strategy that scores candidate words based on text similarity while heavily penalizing informational overlapping.
-*   **`diversity=0.6`**: Controls the exact threshold of conceptual novelty. Setting this value to `0.6` establishes a high-performance equilibrium—minimizing redundancy without losing the document's global contextual alignment.
-*   **`top_n=30`**: Dictates the definitive array limit, ensuring only the top 30 highest-scoring semantic keyphrases are isolated for user export.
+* **keyphrase_ngram_range=(1, 2):** Instructs the model to extract both single-word terms (Unigrams) and dual-word combinations (Bigrams), capturing complex concepts like "Data Science" or "Machine Learning".
 
----
+* **stop_words='english':** Automatically filters out semantic filler elements ("the", "is", "and") to safeguard vector memory spaces for critical technical terminologies.
 
-##  Future Research Scope
+* **use_mmr=True:** Activates Maximal Marginal Relevance, a text re-ranking strategy that scores candidate words based on text similarity while heavily penalizing informational overlapping.
 
-*   **Scalable Vector Databases:** Integrating distributed vector memory structures (like **FAISS** or **Pinecone**) to safely transition the current pipeline from hundreds of pages into thousands of multi-format academic PDFs.
-*   **Large Language Model (LLM) Orchestration:** Hooking the extracted semantic metadata directly into Retrieval-Augmented Generation (**RAG**) pipelines via frameworks like **LangChain** or **LlamaIndex** to enable context-aware document conversational indexing.
+* **diversity=0.6:** Controls the exact threshold of conceptual novelty. Setting this value to 0.6 establishes a high-performance equilibrium—minimizing redundancy without losing the document's global contextual alignment.
 
----
+* **top_n=30:** Dictates the definitive array limit, ensuring only the top 30 highest-scoring semantic keyphrases are isolated for user export.
 
-##  License & Contributions
+## Future Research Scope
+Scalable Vector Databases: Integrating distributed vector memory structures (like FAISS or Pinecone) to safely transition the current pipeline from hundreds of pages into thousands of multi-format academic PDFs.
 
+Large Language Model (LLM) Orchestration: Hooking the extracted semantic metadata directly into Retrieval-Augmented Generation (RAG) pipelines via frameworks like LangChain or LlamaIndex to enable context-aware document conversational indexing.
+
+## License & Contributions
 Distributed under the MIT License. Contributions to enhance the performance, processing speed, or structural data capabilities of this repository are highly welcome. Feel free to fork the repository and open a Pull Request.
 
----
-
 ## Connect & Collaborate
-
-This project is part of an ongoing research focus in **Semantic Computing** and **Natural Language Processing**. If you have queries, professional insights, or are interested in collaborative development:
-??
+This project is part of an ongoing research focus in Semantic Computing and Natural Language Processing. If you have queries, professional insights, or are interested in collaborative development, feel free to reach out!
